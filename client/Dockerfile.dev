@@ -1,0 +1,7 @@
+FROM node:alpine
+RUN mkdir -p app/frontendapp
+WORKDIR '/app/frontendapp'
+COPY --chown=node:node ./package.json .
+RUN npm install
+COPY --chown=node:node . .
+CMD ["npm", "run", "start"]
