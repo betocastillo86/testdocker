@@ -43,7 +43,7 @@ namespace worker
                     };
                     subscription.OnMessage = (channel, message) =>
                     {
-                        Log.Information("[{0}] Received message '{1}' from channel '{2}'.", name, message, channel);
+                        Log.Information("[{0}] Received a new message here '{1}' from channel '{2}'.", name, message, channel);
 
                         using (var client = new RedisClient(redisConnection))
                         {
